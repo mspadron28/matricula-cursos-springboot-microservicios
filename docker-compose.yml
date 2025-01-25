@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  cursos-ms:
+    image: mysql:latest
+    container_name: cursos-ms
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: cursosdb
+    ports:
+      - "3318:3306"
+    networks:
+      - aulas-net
+    volumes:
+      - cursos-data:/var/lib/mysql
+
+  curso-user-app:
+    image: curso-user-app-image
+    container_name: curso-user-app
+    ports:
+      - "8002:8002"
+    depends_on:
+      - cursos-ms
+    networks:
+      - aulas-net
+
+  estudiantes-ms:
+    image: postgres:latest
+    container_name: estudiantes-ms
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: estudiantesdb
+    ports:
+      - "5472:5432"
+    networks:
+      - aulas-net
+    volumes:
+      - estudiantes-data:/var/lib/postgresql/data
+
+  estudiantes-app:
+    image: estudiantes-app-image
+    container_name: estudiantes-app
+    ports:
+      - "8003:8003"
+    depends_on:
+      - estudiantes-ms
+    networks:
+      - aulas-net
+
+  frontend-cursware:
+    image: frontend-cursware
+    container_name: frontend-cursware
+    ports:
+      - "3000:3000"
+    networks:
+      - aulas-net
+
+networks:
+  aulas-net:
+
+
+volumes:
+  cursos-data:
+  estudiantes-data:
