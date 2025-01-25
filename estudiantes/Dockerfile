@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copia el archivo JAR generado al contenedor
-COPY target/estudiantes-0.0.1-SNAPSHOT.jar app.jar
+COPY target2/estudiantes-0.0.1-SNAPSHOT.jar app.jar
 
 # Exponer el puerto en el que corre la app (8002 en este caso)
 EXPOSE 8003
