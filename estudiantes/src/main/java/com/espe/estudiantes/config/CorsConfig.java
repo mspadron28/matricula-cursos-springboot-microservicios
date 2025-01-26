@@ -13,11 +13,12 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**") // Permite todas las rutas
-                        .allowedOrigins("http://frontend-cursware:3000") // Permite solo este origen
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS") // Métodos permitidos
-                        .allowedHeaders("*") // Cabeceras permitidas
-                        .allowCredentials(true); // Permitir credenciales
+                registry.addMapping("/**")
+                        .allowedOrigins("*") // Permitir todos los orígenes
+                        .allowedMethods("*") // Permitir todos los métodos HTTP
+                        .allowedHeaders("*") // Permitir todos los encabezados
+                        .exposedHeaders("*") // Exponer todos los encabezados
+                        .allowCredentials(false); // Sin credenciales
             }
         };
     }
