@@ -13,6 +13,12 @@ Cada uno de estos proyectos está configurado para funcionar con Docker.
 
 ## Pasos para Configurar y Ejecutar el Proyecto
 Siga los siguientes pasos para levantar el proyecto:
+(Es importante realizar el build de cada microservicio en la carpet estudiantes como ms-cursos)
+
+   - Ejecute el siguiente comando:
+     ```bash
+      mvn clean package -DskipTests
+     ```
 
 ### 1. Crear las Imágenes Docker de los Microservicios y Frontend
 
