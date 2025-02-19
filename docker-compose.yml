@@ -15,7 +15,7 @@ services:
       - cursos-data:/var/lib/mysql
 
   curso-user-app:
-    image: curso-user-app-image
+    image: matias28/curso-user-app-image
     container_name: curso-user-app
     ports:
       - "8002:8002"
@@ -39,7 +39,7 @@ services:
       - estudiantes-data:/var/lib/postgresql/data
 
   estudiantes-app:
-    image: estudiantes-app-image
+    image: matias28/estudiantes-app-image
     container_name: estudiantes-app
     ports:
       - "8003:8003"
@@ -49,7 +49,7 @@ services:
       - aulas-net
 
   frontend-cursware:
-    image: frontend-cursware
+    image: matias28/frontend-cursware:v1
     container_name: frontend-cursware
     ports:
       - "3000:3000"

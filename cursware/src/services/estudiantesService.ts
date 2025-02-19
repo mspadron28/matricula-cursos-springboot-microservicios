@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8003/api/estudiantes';
+const BASE_URL = 'http://172.191.30.75:8003/api/estudiantes';
 
 export interface Estudiante {
     id?: number;

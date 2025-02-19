@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8002/api/cursos';
+const BASE_URL = 'http://172.191.30.75:8002/api/cursos';
 
 export interface Curso {
     id?: number;
